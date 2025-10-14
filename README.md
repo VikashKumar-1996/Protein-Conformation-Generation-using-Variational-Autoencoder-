@@ -15,8 +15,7 @@ The decoder reconstructs **3D Cartesian coordinates** using a **NeRF-based algor
 
 ##  Motivation
 Proteins exhibit conformational flexibility essential for biological function.  
-Understanding these transitions can:
-- Improve molecular docking and drug discovery  
+Understanding these transitions can: 
 - Enhance structural prediction for dynamic systems  
 - Bridge the gap between static crystallographic structures  
 
