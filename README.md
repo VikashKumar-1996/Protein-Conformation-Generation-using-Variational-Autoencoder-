@@ -75,15 +75,7 @@ A **contact map loss** can be incorporated to enforce global structure consisten
 * Latent interpolation between open ↔ closed states shows **smooth structural transitions**
 * Clustering indicates **distinct conformational basins**
 
-###  Generated Structures
 
-| Conformation                 | Visualization                |
-| ---------------------------- | ---------------------------- |
-| Open → Intermediate → Closed | *(Insert image or GIF here)* |
-
-*(Use Py3Dmol or NGLview for interactive 3D visualization.)*
-
----
 
 ##  Project Structure
 
@@ -91,9 +83,10 @@ A **contact map loss** can be incorporated to enforce global structure consisten
 protein_conformation_vae/
 ├── README.md
 ├── data/
-│   ├── open_state.npy
-│   ├── closed_state.npy
-│   └── combined_dataset.npy
+│   ├── open_state.pdb
+│   ├── closed_state.pdb
+│   ├── merged.pdb
+|   └── Internal_coordinates.npy
 ├── src/
 │   ├── model.py              # β-VAE architecture
 │   ├── train.py              # Training script
