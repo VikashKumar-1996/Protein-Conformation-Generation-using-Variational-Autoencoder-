@@ -1,16 +1,12 @@
-Excellent 👌 — here’s your **final polished `README.md`**, already tailored for your GitHub portfolio and ready to paste directly into your repo.
 
----
-
-````markdown
-# 🧬 Protein Conformation Generation using Variational Autoencoder (VAE)
+#  Protein Conformation Generation using Variational Autoencoder (VAE)
 
 **Author:** [Vikash Kumar](https://github.com/VikashKumar-1996)  
 **Keywords:** Protein Modeling • Variational Autoencoder • NeRF • Internal Coordinates • Generative Modeling • Structural Biology  
 
 ---
 
-## 📘 Overview
+##  Overview
 This project demonstrates a **deep generative modeling approach** to predict and generate intermediate **protein conformations** between known *open* and *closed* states.  
 
 Using a **β-VAE (Variational Autoencoder)** trained on **internal coordinates** (bond lengths, bond angles, torsion angles), this framework learns a compact **latent representation** of protein conformational space.  
@@ -18,7 +14,7 @@ The decoder reconstructs **3D Cartesian coordinates** using a **NeRF-based algor
 
 ---
 
-## 🧠 Motivation
+##  Motivation
 Proteins exhibit conformational flexibility essential for biological function.  
 Understanding these transitions can:
 - Improve molecular docking and drug discovery  
@@ -30,14 +26,14 @@ This project aims to **learn a continuous conformational manifold** from open an
 
 ---
 
-## 🧩 Methodology
+##  Methodology
 
-### 🔹 1. Data Representation
+###  1. Data Representation
 - **Input:** Internal coordinates (bond lengths, bond angles, torsion angles)  
 - **Normalization:** Each feature normalized per residue  
 - **Training data:** Combined open + closed state coordinate sets (341 atoms)  
 
-### 🔹 2. Model Architecture
+### 2. Model Architecture
 A **β-VAE** with KL annealing and dropout regularization:
 
 ```python
@@ -51,7 +47,7 @@ Decoder:  Dense(128) → Dense(256) → Dense(512) → Output(1017)
 * Loss: Reconstruction + β * KL Divergence
 * β-scheduling: Linear annealing
 
-### 🔹 3. Geometry Reconstruction
+###  3. Geometry Reconstruction
 
 The **NeRF algorithm** (Natural Extension Reference Frame) converts internal coordinates to Cartesian 3D coordinates:
 
@@ -59,13 +55,13 @@ The **NeRF algorithm** (Natural Extension Reference Frame) converts internal coo
 * Maintains chain connectivity
 * Produces realistic, smooth molecular backbones
 
-### 🔹 4. Contact Map Regularization (optional)
+###  4. Contact Map Regularization (optional)
 
 A **contact map loss** can be incorporated to enforce global structure consistency between generated and reference conformations.
 
 ---
 
-## 🧪 Workflow
+##  Workflow
 
 ```mermaid
 flowchart LR
@@ -93,7 +89,7 @@ E --> F[Generated 3D structure (PDB)]
 * Latent interpolation between open ↔ closed states shows **smooth structural transitions**
 * Clustering indicates **distinct conformational basins**
 
-### 🔸 Generated Structures
+###  Generated Structures
 
 | Conformation                 | Visualization                |
 | ---------------------------- | ---------------------------- |
@@ -103,7 +99,7 @@ E --> F[Generated 3D structure (PDB)]
 
 ---
 
-## 🧰 Project Structure
+##  Project Structure
 
 ```
 protein_conformation_vae/
@@ -133,7 +129,7 @@ protein_conformation_vae/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ###  Installation
 
