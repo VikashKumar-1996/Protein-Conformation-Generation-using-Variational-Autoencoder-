@@ -108,9 +108,7 @@ protein_conformation_vae/
 │   ├── latent_space.png
 │   ├── rmsd_distribution.png
 │   └── contact_map_comparison.png
-├── requirements.txt
-└── streamlit_app/
-    └── app.py                # Interactive demo
+├── requirements.txt              # Interactive demo
 ```
 
 ---
