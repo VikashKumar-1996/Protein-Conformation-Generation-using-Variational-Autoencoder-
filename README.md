@@ -1,28 +1,41 @@
-# Protein-Conformation-Generation-using-Variational-Autoencoder-
+#  Protein Conformation Generation using Variational Autoencoder (VAE)
 
-##  Project Overview
-
-Proteins adopt complex 3D conformations that determine their function. Modeling and generating these structures is a central problem in computational biology. This project:
-
-- Learns protein structures using **bond lengths, bond angles, and torsion angles**.
-- Incorporates **contact maps** and **Gaussian distance priors** to enforce structural constraints.
-- Encodes protein conformations into a **32-dimensional latent space**.
-- Generates novel protein conformations and reconstructs them into **3D Cartesian coordinates** using a **NeRF-based algorithm**.
+**Author:** [Vikash Kumar](https://github.com/VikashKumar-1996)  
+**Keywords:** Protein Modeling • Variational Autoencoder • NeRF • Internal Coordinates • Generative Modeling • Structural Biology  
 
 ---
 
-##  Features
+##  Overview
+This project demonstrates a **deep generative modeling approach** to predict and generate intermediate **protein conformations** between known *open* and *closed* states.  
 
-- **Variational Autoencoder (VAE)** for protein internal coordinates.
-- **NeRF-based 3D reconstruction** ensuring correct geometry.
-- **Physical constraints**: contact map and Gaussian distance regularization.
-- **Loss functions** include:
-  - Reconstruction loss on internal coordinates
-  - KL divergence for latent space regularization
-  - Cartesian coordinate consistency loss
-  - Contact map binary cross-entropy loss
-  - Gaussian distance regularization loss
-- **Post-processing**:
-  - Alignment to reference structure using Kabsch algorithm
-  - RMSD evaluation
-  - Exporting conformations as multi-model PDB files
+Using a **β-VAE (Variational Autoencoder)** trained on **internal coordinates** (bond lengths, bond angles, torsion angles), this framework learns a compact **latent representation** of protein conformational space.  
+The decoder reconstructs **3D Cartesian coordinates** using a **NeRF-based algorithm**, enabling visualization and physical validation of generated structures.
+
+---
+
+##  Motivation
+Proteins exhibit conformational flexibility essential for biological function.  
+Understanding these transitions can:
+- Improve molecular docking and drug discovery  
+- Enhance structural prediction for dynamic systems  
+- Bridge the gap between static crystallographic structures  
+
+However, intermediate conformations are often **experimentally unobserved**.  
+This project aims to **learn a continuous conformational manifold** from open and closed state data, allowing interpolation and sampling of plausible intermediates.
+
+---
+
+##  Methodology
+
+###  1. Data Representation
+- **Input:** Internal coordinates (bond lengths, bond angles, torsion angles)  
+- **Normalization:** Each feature normalized per residue  
+- **Training data:** Combined open + closed state coordinate sets (341 atoms)  
+
+###  2. Model Architecture
+A **β-VAE** with KL annealing and dropout regularization:
+
+```python
+Encoder:  [Input (1017)] → Dense(512) → Dense(256) → Dense(128) → μ, logσ
+Latent:   z ∈ ℝ^64
+Decoder:  Dense(128) → Dense(256) → Dense(512) → Output(1017)
