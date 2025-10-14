@@ -60,9 +60,9 @@ The **NeRF algorithm** (Natural Extension Reference Frame) converts internal coo
 A **contact map loss** can be incorporated to enforce global structure consistency between generated and reference conformations.
 
 
-## 📈 Results
+## Results
 
-### 🔸 Reconstruction Quality
+### Reconstruction Quality
 
 | Metric                  | Mean   | Std   |
 | ----------------------- | ------ | ----- |
@@ -70,7 +70,7 @@ A **contact map loss** can be incorporated to enforce global structure consisten
 | Radius of Gyration (Rg) | 12.4   | ±0.6  |
 | Bond Length Mean        | 1.47 Å | ±0.02 |
 
-### 🔸 Latent Space Visualization
+###  Latent Space Visualization
 
 * Latent interpolation between open ↔ closed states shows **smooth structural transitions**
 * Clustering indicates **distinct conformational basins**
