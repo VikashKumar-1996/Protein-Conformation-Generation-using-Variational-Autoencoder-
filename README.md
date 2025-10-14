@@ -162,9 +162,7 @@ python src/nerf_decoder.py --input results/generated_internal.npy --output resul
 
 ## References
 
-1. Wang et al., *NeRF: Natural Extension Reference Frame for Molecular Reconstruction* (2019)
-2. Kingma & Welling, *Auto-Encoding Variational Bayes* (2013)
-3. Jumper et al., *Highly accurate protein structure prediction with AlphaFold* (Nature, 2021)
+1. Mansoor, Sanaa, et al. "Protein ensemble generation through variational autoencoder latent space sampling." Journal of Chemical Theory and Computation 20.7 (2024): 2689-2695.
 
 ---
 
