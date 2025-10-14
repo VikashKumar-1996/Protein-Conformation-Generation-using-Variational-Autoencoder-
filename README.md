@@ -55,24 +55,10 @@ The **NeRF algorithm** (Natural Extension Reference Frame) converts internal coo
 * Maintains chain connectivity
 * Produces realistic, smooth molecular backbones
 
-###  4. Contact Map Regularization (optional)
+###  4. Contact Map Regularization 
 
 A **contact map loss** can be incorporated to enforce global structure consistency between generated and reference conformations.
 
----
-
-##  Workflow
-
-```mermaid
-flowchart LR
-A[Input internal coordinates (open + closed)] --> B[β-VAE encoder]
-B --> C[Latent space z]
-C --> D[Decoder reconstruction]
-D --> E[NeRF Cartesian conversion]
-E --> F[Generated 3D structure (PDB)]
-```
-
----
 
 ## 📈 Results
 
