@@ -17,9 +17,9 @@ The decoder reconstructs **3D Cartesian coordinates** using a **NeRF-based algor
 ##  Motivation
 Proteins exhibit conformational flexibility essential for biological function.  
 Understanding these transitions can:
-- Improve molecular docking and drug discovery  
+- Improve molecular docking 
 - Enhance structural prediction for dynamic systems  
-- Bridge the gap between static crystallographic structures  
+    
 
 However, intermediate conformations are often **experimentally unobserved**.  
 This project aims to **learn a continuous conformational manifold** from open and closed state data, allowing interpolation and sampling of plausible intermediates.
